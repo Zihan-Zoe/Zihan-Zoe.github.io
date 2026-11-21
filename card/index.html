@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zihan Jin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#1E1B3A; --violet:#6A4DF0; --label:#5A3FE0; --pale:#F5F2FF; --line:#BFA7FF; --muted:#5B5677; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #fff; color: var(--navy); font-family: 'Inter', Arial, sans-serif; }
+  main { max-width: 420px; margin: 0 auto; padding: 32px 24px 48px; }
+  .photo { aspect-ratio: 4 / 5; border-radius: 20px; overflow: hidden; background: var(--pale); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  h1 { font-family: 'Poppins', Arial, sans-serif; font-weight: 700; font-size: 34px; margin-top: 28px; }
+  .cn { font-size: 18px; color: var(--muted); margin-top: 4px; }
+  .role { font-size: 17px; line-height: 1.75; margin-top: 20px; }
+  ul { list-style: none; margin-top: 24px; }
+  li { margin-top: 14px; }
+  a { color: var(--label); text-decoration: none; font-size: 17px; }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<main>
+  <!-- Put a 4:5 portrait next to this file as photo.jpg; the slot hides itself until then. -->
+  <div class="photo" id="photo"><img src="photo.jpg" alt="Photo of Zihan Jin" onerror="document.getElementById('photo').remove()"></div>
+  <h1>Zihan Jin</h1>
+  <!-- <p class="cn">中文名</p> -->
+  <p class="role">Ph.D. Student<br>University of Southern California<br>Los Angeles, CA</p>
+  <ul>
+    <li><a href="mailto:zihanjin@usc.edu">Email · zihanjin@usc.edu</a></li>
+    <li><a href="https://www.linkedin.com/in/zihanjin-neuroai">LinkedIn</a></li>
+    <li><a href="https://x.com/ZihanJin423">X / Twitter</a></li>
+    <!-- Add when ready:
+    <li><a href="cv.pdf">CV (PDF)</a></li>
+    <li><a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a></li>
+    <li><a href="https://github.com/YOUR_USERNAME">GitHub</a></li>
+    -->
+  </ul>
+</main>
+</body>
+</html>
