@@ -1,6 +1,7 @@
 # zihan-zoe.github.io
 
 - **Contact card:** https://zihan-zoe.github.io/card/ (QR: `qr/card.png`, reuse it anywhere)
+- **Videos:** `https://zihan-zoe.github.io/v/<slug>/` (player with captions; `video.mp4`, `captions.en.vtt`, `poster.jpg`)
 - **Papers:** one stable address and one QR code per paper: `https://zihan-zoe.github.io/p/<slug>/` → `qr/<slug>.png`
 
 ## Add a paper, or move one (e.g. OpenReview → arXiv)

@@ -1,0 +1,238 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.350
+Here is an eighteen-word skill for extractive question answering:
+
+2
+00:00:04.450 --> 00:00:06.324
+Use only the supplied context,
+
+3
+00:00:06.374 --> 00:00:10.200
+and return the shortest span that answers the question.
+
+4
+00:00:10.700 --> 00:00:12.297
+With a minimal harness,
+
+5
+00:00:12.347 --> 00:00:16.300
+it raises exact match on SQuAD by sixty-six points.
+
+6
+00:00:16.600 --> 00:00:18.814
+Now give the agent a richer harness.
+
+7
+00:00:18.864 --> 00:00:22.120
+What happens to the skill's gain? Take a guess.
+
+8
+00:00:23.820 --> 00:00:25.690
+The answer is...
+
+9
+00:00:26.200 --> 00:00:28.480
+now it adds just two points.
+
+10
+00:00:28.770 --> 00:00:30.840
+So, is it a good skill?
+
+11
+00:00:31.750 --> 00:00:35.607
+We usually credit a skill with one number: accuracy with it,
+
+12
+00:00:35.657 --> 00:00:37.650
+minus accuracy without it.
+
+13
+00:00:37.750 --> 00:00:41.181
+Yet the same skill just got two very different numbers:
+
+14
+00:00:41.231 --> 00:00:42.670
+sixty-six and two.
+
+15
+00:00:43.670 --> 00:00:47.227
+That number belongs to the harness as much as to the skill.
+
+16
+00:00:47.277 --> 00:00:51.079
+The harness is everything that runs the agent around the model:
+
+17
+00:00:51.129 --> 00:00:55.220
+the answer interface, error feedback, retries, and reflection.
+
+18
+00:00:55.520 --> 00:00:56.134
+So we ask:
+
+19
+00:00:56.184 --> 00:01:00.200
+under which harness does a skill become real capability?
+
+20
+00:01:01.900 --> 00:01:04.607
+To find out, we freeze the model and the skill,
+
+21
+00:01:04.657 --> 00:01:07.420
+and climb the harness one level at a time.
+
+22
+00:01:08.820 --> 00:01:12.441
+We test four skill conditions: no skill, a Direct skill,
+
+23
+00:01:12.491 --> 00:01:16.920
+SkillOpt, and Trace2Skill, on nine benchmarks, three runs each.
+
+24
+00:01:17.820 --> 00:01:21.836
+So what did we find? First, skill value moves with the harness,
+
+25
+00:01:21.886 --> 00:01:23.090
+in three ways.
+
+26
+00:01:23.400 --> 00:01:25.708
+One: absorbed. With a minimal harness,
+
+27
+00:01:25.758 --> 00:01:29.120
+the skill adds sixty-six points; with a richer harness,
+
+28
+00:01:29.170 --> 00:01:33.130
+only two, because the harness already does the skill's job.
+
+29
+00:01:33.420 --> 00:01:35.647
+Two: rescued. Without error feedback,
+
+30
+00:01:35.697 --> 00:01:39.093
+the skill costs twenty-two points; feed the errors back,
+
+31
+00:01:39.143 --> 00:01:41.720
+and the loss turns into a small gain.
+
+32
+00:01:42.020 --> 00:01:43.043
+Three: preserved.
+
+33
+00:01:43.093 --> 00:01:46.702
+The skill adds about thirteen points under both harnesses,
+
+34
+00:01:46.752 --> 00:01:50.270
+because it fixes a failure that no harness can see.
+
+35
+00:01:51.170 --> 00:01:53.476
+Finding two: where does recovery break?
+
+36
+00:01:53.526 --> 00:01:57.270
+It works mainly when the failure leaves a visible signal.
+
+37
+00:01:57.580 --> 00:01:59.898
+We sort the failures into two classes:
+
+38
+00:01:59.948 --> 00:02:01.643
+those with a visible signal,
+
+39
+00:02:01.693 --> 00:02:04.573
+such as a format violation or an error message,
+
+40
+00:02:04.623 --> 00:02:06.567
+and those with no signal at all,
+
+41
+00:02:06.617 --> 00:02:09.410
+just a wrong answer that raises nothing.
+
+42
+00:02:09.700 --> 00:02:15.212
+Then we count how many the richer harness rescues on three question-answering benchmarks.
+
+43
+00:02:15.262 --> 00:02:17.250
+With a signal, almost half.
+
+44
+00:02:17.450 --> 00:02:20.250
+Without one, about two in a hundred.
+
+45
+00:02:21.150 --> 00:02:24.544
+Finding three: run both models on twenty labeled tasks,
+
+46
+00:02:24.594 --> 00:02:28.150
+and switch to the stronger model only where it wins.
+
+47
+00:02:28.450 --> 00:02:31.642
+This pilot beats always using GPT-5.6-sol:
+
+48
+00:02:31.692 --> 00:02:35.733
+fifty-seven point four versus fifty-three point five,
+
+49
+00:02:35.783 --> 00:02:38.630
+at thirty-six percent lower cost.
+
+50
+00:02:38.920 --> 00:02:42.193
+The same holds for both Sonnet models: higher scores,
+
+51
+00:02:42.243 --> 00:02:44.550
+and about forty percent cheaper.
+
+52
+00:02:45.450 --> 00:02:48.065
+To sum up: we froze the model and the skill,
+
+53
+00:02:48.115 --> 00:02:51.080
+and climbed the harness one level at a time.
+
+54
+00:02:51.270 --> 00:02:54.300
+First, skill value moves with the harness.
+
+55
+00:02:54.400 --> 00:02:54.788
+Second,
+
+56
+00:02:54.838 --> 00:02:59.080
+recovery works mainly when the failure leaves a visible signal.
+
+57
+00:02:59.170 --> 00:02:59.509
+Third,
+
+58
+00:02:59.559 --> 00:03:03.792
+a small pilot per benchmark beats always using the stronger model,
+
+59
+00:03:03.842 --> 00:03:04.750
+at lower cost.
+
